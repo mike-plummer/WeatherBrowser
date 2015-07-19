@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+jettyRun {
+    httpPort = 7777
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
+
+//Unzip JSON resources prior to deploying Jetty
+//Adapted from http://mrhaki.blogspot.com/2012/06/gradle-goodness-unpacking-archive.html
+task unzip(type: Copy) {
+    def statesZipFile = file('src/main/resources/states.json.zip')
+    def tornadoZipFile = file('src/main/resources/tornadoData.json.zip')
+    def outputDir = file("src/main/webapp/assets/data")
+
+    from zipTree(statesZipFile)
+    into outputDir
+
+    from zipTree(tornadoZipFile)
+    into outputDir
+}
+
+jettyRun.dependsOn unzip

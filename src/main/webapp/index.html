@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<!--
+	Highlights by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Weather Browser</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+    <link href='assets/css/main.css' rel='stylesheet' />
+    <link href='assets/css/slider.css' rel='stylesheet'/>
+    <link href='assets/css/map.css' rel='stylesheet' />
+</head>
+<body>
+
+<!-- Header -->
+<section id="header">
+    <header class="major">
+        <h1>Weather Browser</h1>
+
+        <p>Example of client-side geospatial visualization using TurfJS</p>
+    </header>
+    <div class="container">
+        <ul class="actions">
+            <li><a href="#one" class="button special scrolly">Begin</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- One -->
+<section id="one" class="main">
+    <div class="container">
+        <span class="image fit primary"><img src="assets/images/pic01.jpg" alt=""/></span>
+
+        <div class="content">
+            <header class="major">
+                <h2>Description</h2>
+            </header>
+            <p>The map is created using Leaflet, a super mapping library for JavaScript. After the data
+                is plotted all the number crunching is done using TurfJS, an extension to Leaflet
+                developed by MapBox.
+                All of this work is done client-side which means there's zero horsepower being
+                used on your server outside of serving up static content resources. The data is served
+                up as GeoJSON data which is easily digested by Turf. The map itself
+                is served up by OpenStreetMap by way of MapBox.</p>
+        </div>
+        <a href="#two" class="goto-next scrolly">Next</a>
+    </div>
+</section>
+
+<!-- Two -->
+<section id="two" class="main">
+    <div class="container">
+        <span class="image fit primary"><img src="assets/images/pic02.jpg" alt=""/></span>
+
+        <div class="content">
+            <header class="major">
+                <h2>Map</h2>
+            </header>
+
+            <p>
+                Use the slider at the top to control the display of data. For performance reasons only a single
+                year at a time can be displayed. The Layers control in the bottom left allows you to enable/disable:
+            </p>
+            <ul>
+                <li>Tornado layer - map of a given year's tornado events. Each has an on-click tooltip for more info.</li>
+                <li>Yearly Heat Map - heat map of the given year's tornado events. This will live-update as the is changed.</li>
+                <li>Overall Heat Map - heat map of all tornado events.</li>
+            </ul>
+            <p>
+                For aggregation information click a state. The state will highlight after a little number-crunching at which point the highlight
+                can be clicked again for a tooltip displaying aggregate information on tornado data in that state over time.
+            </p>
+
+            <div class="slider-wrapper wrapper">
+                <div id="slider"></div>
+            </div>
+
+            <div id="turfMap">
+                <div class='legend-wrapper wrapper'>
+                    <strong>Severity</strong>
+                    <nav class='legend clearfix'>
+                        <span style='background:#2E3436;'></span>
+                        <span style='background:#5C3566;'></span>
+                        <span style='background:#204A87;'></span>
+                        <span style='background:#4E9A06;'></span>
+                        <span style='background:#C4A000;'></span>
+                        <span style='background:#CE5C00;'></span>
+                        <span style='background:#A40000;'></span>
+
+                        <label>UNK</label>
+                        <label>EF0</label>
+                        <label>EF1</label>
+                        <label>EF2</label>
+                        <label>EF3</label>
+                        <label>EF4</label>
+                        <label>EF5</label>
+                        <p>Source: NOAA NCDC</p>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <a href="#three" class="goto-next scrolly">Next</a>
+    </div>
+</section>
+
+<section id="three" class="main">
+    <div class="container">
+        <span class="image fit primary"><img src="assets/images/pic03.jpg" alt=""/></span>
+
+        <div class="content">
+            <header class="major">
+                <h2>Colophon</h2>
+            </header>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="http://www.html5up.net">HTML5 UP - Highlights</a></td>
+                            <td>Free template from the super HTML5 UP</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://leafletjs.com/">Leaflet</a>/<a href="http://www.mapbox.com">Mapbox</a></td>
+                            <td>Mobile-friendly Javascript mapping library</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://turfjs.org/">TurfJS</a></td>
+                            <td>Excellent geospatial Javascript library that extends Leaflet/Mapbox</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://github.com/razorfish/JS-Range-Slider">JS Range Slider</a></td>
+                            <td>Easy-to-use Javascript range slider</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://catalog.data.gov/dataset/severe-weather-data-inventory-swdi">USA Severe Weather Data Inventory (SWDI)</a></td>
+                            <td>Severe weather data published by the US Government's National Oceanic & Atmospheric Administration. I pre-processed this data
+                            into GeoJSON format for use in this project.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://jquery.com/">jQuery</a></td>
+                            <td>Popular JavaScript library.</td>
+                        </tr>
+                    </tbody>
+                    <!--
+                    <tfoot>
+                        <tf colspan="2"></tf>
+                    </tfoot>
+                    -->
+                </table>
+            </div>
+        </div>
+        <a href="#footer" class="goto-next scrolly">Next</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<section id="footer">
+    <div class="container">
+        <div class="content">
+            <header class="major">
+                <h2>About</h2>
+            </header>
+            <header>
+                <h4>Mike Plummer</h4>
+
+                <p>Senior Consultant - Object Partners, Inc.</p>
+            </header>
+            <span class="image right"><img src="assets/images/mike.png" alt=""/></span>Mike Plummer has been developing Java, Groovy, and Javascript applications for 6 years all across the US. He has been a Senior Consultant with Object Partners, Inc. since 2015.
+            <hr/>
+            <header>
+                <h4>Object Partners, Inc.</h4>
+
+                <p>Software Consulting - <a href="https://www.objectpartners.com">Website</a></p>
+            </header>
+            <span class="image left"><img src="assets/images/objectPartnersLogo.png" alt="Object Partners Logo"/></span>Object Partners is a software consulting firm based out of Minneapolis, MN, USA specializing in Groovy, Grails, Javascript (including Angular and React), and Java.
+        </div>
+    </div>
+    <footer>
+        <ul class="icons">
+            <li><a href="https://twitter.com/plummer_mike" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="https://github.com/mike-plummer" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="mailto:mike.plummer@objectpartners.com" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        Coded with pride in Omaha, Nebraska
+        <ul class="copyright">
+            <li>2015 Mike Plummer</li>
+            <li>Code: <a href="https://github.com/mike-plummer">GitHub</a></li>
+            <li><a href="https://www.objectpartners.com">Object Partners, Inc.</a></li>
+        </ul>
+    </footer>
+</section>
+
+<!-- Scripts -->
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src='http://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+<script src='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-heat/v0.1.3/leaflet-heat.js'></script>
+<script src='http://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'></script>
+
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/map.js"></script>
+<script src="assets/js/slider.js"></script>
+
+<script>
+    WeatherBrowser.setupMap();
+</script>
+
+</body>
+</html>
