@@ -151,9 +151,10 @@ var WeatherBrowser = WeatherBrowser || {
             // - Updated to add state names
             $.ajax({
                 url: 'assets/data/states.json',
-                cache: true
+                cache: true,
+                dataType: 'json'
             }).success(function(data){
-                WeatherBrowser.states = $.parseJSON(data);
+                WeatherBrowser.states = data;
             }).fail(function( jqXHR, textStatus, message ) {
                 console.log( "Request failed: " + textStatus + ": "+message );
             });
