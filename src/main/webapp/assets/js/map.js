@@ -108,7 +108,7 @@ var WeatherBrowser = WeatherBrowser || {
                 overallHeatLayer.setLatLngs(latLngs);
             }).on('error', function (err) {
                     console.log(err);
-            }).loadURL('http://localhost:7777/WeatherBrowser/assets/data/tornadoData.json');
+            }).loadURL('assets/data/tornadoData.json');
 
             //Build the tabs that will be displayed on the year slider. Label every 10 years to reduce clutter.
             var tabs = [];
@@ -150,9 +150,12 @@ var WeatherBrowser = WeatherBrowser || {
             //Source: https://raw.githubusercontent.com/datasets/geo-boundaries-us-110m/master/json/ne_110m_admin_1_states_provinces_shp_scale_rank.geojson
             // - Updated to add state names
             $.ajax({
-                url: 'http://localhost:7777/WeatherBrowser/assets/data/states.json'
+                url: 'assets/data/states.json',
+                cache: true
             }).success(function(data){
-                states = JSON.parse(data);
+                WeatherBrowser.states = $.parseJSON(data);
+            }).fail(function( jqXHR, textStatus, message ) {
+                console.log( "Request failed: " + textStatus + ": "+message );
             });
 
             /*
@@ -163,8 +166,8 @@ var WeatherBrowser = WeatherBrowser || {
                 var clickPoint = turf.point([e.latlng.lng, e.latlng.lat]);
                 var containingState;
                 //Iterate the each state...
-                for(var i=0; i < states.features.length; i++) {
-                    var state = states.features[i];
+                for(var i=0; i < WeatherBrowser.states.features.length; i++) {
+                    var state = WeatherBrowser.states.features[i];
                     //...and use Turf to determine if the click point is bounded by one of them
                     if( turf.inside(clickPoint, state) ) {
                         containingState = state;
