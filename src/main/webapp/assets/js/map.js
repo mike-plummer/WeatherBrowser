@@ -265,7 +265,7 @@ var WeatherBrowser = WeatherBrowser || {
                             'Tornado Reports per 1000 mi^2: '+(parseInt(layer.feature.properties['point_count']) * 1000 / stateAreaInMiles).toFixed(2) + '<br/>' +
                             'Total Fatalities: '+layer.feature.properties['fatalities']+'<br/>' +
                             'Total Injuries: '+layer.feature.properties['injuries']+'<br/>' +
-                            'Maximum Injuries: '+layer.feature.properties['max_fatalities']+'<br/>' +
+                            'Maximum Fatalities: '+layer.feature.properties['max_fatalities']+'<br/>' +
                             'Maximum Injuries: '+layer.feature.properties['max_injuries']+'</p>';
                         layer.bindPopup(content);
                     });
