@@ -126,7 +126,7 @@ var WeatherBrowser = WeatherBrowser || {
                 //Anytime the slider changes this function is fired. We evaluate if the slider has changed enough
                 //from the previous value to warrant updating the map to a new year's data.
                 var year = 1955 + min;
-                if( Math.abs(year - filteredYear) > 1.4 ) {
+                if( Math.abs(year - filteredYear) > 1.0 ) {
                     //User has moved slider to a new year. Reset map filter to display tornadoes from new year.
                     filteredYear = 1955 + Math.round(min);
                     WeatherBrowser.applyDateFilter(filteredYear);
