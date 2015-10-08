@@ -4,6 +4,8 @@ Example of client-side geospatial visualization using TurfJS.
 ### Description
 This application uses Tornado incidence data for the past 60 years as recorded by the US Government to demonstrate the ability to plot, adjust, analyze, and aggregate geospatial information using a series of Javascript libraries. Due to the large dataset (almost 50,000 individual tornadoes with close to 100,000 geographic points) the map displays events one year at a time. For each year, an optional HeatMap can be enabled to display 'hot spots' of activity for that year. There is an additional overall HeatMap that shows hot spots over the entirety of the 60 year dataset. By clicking an individual US state on the map aggregate data is displayed for tornadoes in that state over time. All of the number-crunching is done client-side - the server only supplies the raw GeoJSON data. Due to security restrictions in the browser it is necessary to run this application using a web server like Jetty or Tomcat, or deploy it to a hosting provider like Heroku.
 
+For more info take a look at the blog post this example was written for: https://objectpartners.com/2015/07/30/client-side-geospatial-analysis-with-turfjs/
+
 ### Usage
 1. Clone this repository. Ensure that you have Gradle available in your local environment.
 2. In a command prompt from the root directory of the repository execute `gradle jettyRun`.
